@@ -1,0 +1,103 @@
+.styling-panel-container {
+  position: fixed;
+  right: 0;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  .styling-panel-inner {
+  background-color: white;
+    display: flex;
+    flex-direction: column;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    width: 250px;
+    height: 80vh;
+    -webkit-box-shadow: -10px 11px 33px -7px rgba(0, 0, 0, 0.19);
+    -moz-box-shadow: -10px 11px 33px -7px rgba(0, 0, 0, 0.19);
+    box-shadow: -10px 11px 33px -7px rgba(0, 0, 0, 0.19);
+    padding: 2rem 3rem;
+    h3 {
+      font-size: 2rem;
+      text-align: center;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid whitesmoke;
+      margin-bottom: 2rem;
+    }
+
+    .styling-form {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      .form-group {
+        margin-bottom: 2rem;
+        h4 {
+          margin-bottom: 1rem;
+          font-size: 1.8rem;
+        }
+        .form-input {
+          margin-bottom: 1rem;
+          display: flex;
+          align-items: center;
+          &:last-child {
+            margin-bottom: 0;
+          }
+          input {
+            margin: 0;
+          }
+          label {
+            margin-left: 1rem;
+            font-size: 1.6rem;
+          }
+        }
+        .circle-picker {
+          width: 180px !important;
+        }
+      }
+      .form-action {
+        cursor: pointer;
+        outline: none;
+        width: 100%;
+        background-color: white;
+        border: 1px solid whitesmoke;
+        padding: 1rem 0;
+        border-radius: 10px;  
+        letter-spacing: 2px;
+        transition: all 0.4s;
+        font-size: 1.8rem;
+        margin-bottom: 2rem;
+
+        &:hover {
+          background-color: black;
+          color: white;
+        }
+        &.m-t-a {
+          margin-top: auto;
+        }
+      }
+    }
+
+    .button-toggle {
+      cursor: pointer;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: -20px;
+      margin: auto;
+      height: 40px;
+      width: 40px;
+      outline: none;
+      border: 1px solid whitesmoke;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: white;
+      i {
+        color: gray;
+        font-size: 2.5rem;
+        margin: 0;
+      }
+    }
+  }
+}

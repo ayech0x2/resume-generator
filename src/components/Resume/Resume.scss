@@ -1,0 +1,388 @@
+.resume {
+  .resume-header {
+    position: relative;
+    margin-bottom: 4rem;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid whitesmoke;
+    padding-bottom: 4rem;
+    .user-info {
+      .user-name {
+        font-size: 3.4rem;
+        margin-bottom: 0.5rem;
+      }
+      .user-title {
+        font-size: 2.2rem;
+      }
+    }
+    .user-avatar {
+      input {
+        visibility: hidden;
+        height: 0;
+        width: 0;
+      }
+      margin-right: 2rem;
+      > label {
+        position: relative;
+        cursor: pointer;
+        height: 100px;
+        width: 100px;
+        border-radius: 50px;
+        display: block;
+        &:hover {
+          .avatar-hover {
+            opacity: 1;
+          }
+        }
+        .avatar-hover {
+          opacity: 0;
+          transition: all 0.3s;
+          border-radius: 50px;
+          z-index: 1;
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 100px;
+          height: 100px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background-color: rgba(0, 0, 0, 0.3);
+
+          i {
+            margin: 0;
+            font-size: 4rem;
+            color: whitesmoke;
+            opacity: 0.7;
+          }
+        }
+        > img {
+          border: 1px solid whitesmoke;
+          height: 100px;
+          width: 100px;
+          border-radius:50px;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+
+  .resume-body {
+    display: grid;
+    grid-template-columns: 100mm auto;
+    grid-gap: 5mm;
+    .resume-experience {
+      position: relative;
+      margin-bottom: 4rem;
+      border-bottom: 1px solid whitesmoke;
+      .block-title {
+        font-size: 2.2rem;
+        text-transform: uppercase;
+        letter-spacing: 0.4rem;
+        margin-bottom: 2rem;
+      }
+      .experience {
+        .single-experience {
+          margin-bottom: 4rem;
+          .experience-title {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+          }
+          .experience-company {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+          }
+          .experience-duration {
+            font-size: 1.4rem;
+            color: gray;
+            margin-bottom: 0.5rem;
+          }
+          .experience-about {
+            max-width: 80%;
+            line-height: 1.8rem;
+            font-size: 1.2rem;
+          }
+        }
+      }
+      .add {
+        transition: all 0.3s;
+        opacity: 0;
+        position: absolute;
+        bottom: 10px;
+        width: 100%;
+        text-align: center;
+        color: gray;
+        cursor: pointer;
+        font-size: 1.2rem;
+      }
+      &:hover {
+        .add {
+          opacity: 1;
+        }
+      }
+    }
+    .resume-education {
+      position: relative;
+      padding-bottom: 2rem;
+      .block-title {
+        font-size: 2.2rem;
+        text-transform: uppercase;
+        letter-spacing: 0.4rem;
+        margin-bottom: 2rem;
+      }
+      .single-education {
+        margin-bottom: 4rem;
+
+        .education-speciality {
+          font-size: 1.4rem;
+          margin-bottom: 1rem;
+        }
+        .education-school {
+          font-size: 1.2rem;
+          margin-bottom: 0.5rem;
+        }
+        .education-duration {
+          font-size: 1.4rem;
+          color: gray;
+          margin-bottom: 1rem;
+        }
+      }
+      .add {
+        transition: all 0.3s;
+        opacity: 0;
+        position: absolute;
+        bottom: 10px;
+        width: 100%;
+        text-align: center;
+        color: gray;
+        cursor: pointer;
+        font-size: 1.2rem;
+      }
+      &:hover {
+        .add {
+          opacity: 1;
+        }
+      }
+    }
+    .resume-personal-info {
+      margin-bottom: 3rem;
+      .info-with-icon {
+        display: flex;
+        align-items: center;
+        margin-bottom: 2mm;
+      }
+      .info-email {
+        letter-spacing: 1.2px;
+        font-size: 1.2rem;
+        color: gray;
+      }
+      .info-phone {
+        letter-spacing: 1.2px;
+        font-size: 1.2rem;
+        color: gray;
+      }
+      .info-city {
+        letter-spacing: 1.2px;
+        font-size: 1.2rem;
+        color: gray;
+      }
+    }
+
+    .resume-tools-and-technologies {
+      margin-bottom: 3rem;
+      color: gray;
+
+      .block-title {
+        font-size: 1.4rem;
+        margin-bottom: 1rem;
+        letter-spacing: 0.2mm;
+      }
+      .tools-and-technologies {
+        display: flex;
+        flex-wrap: wrap;
+        > span {
+          padding: 0.1rem 1rem;
+          border-radius: 1rem;
+          margin-bottom: 0.7rem;
+          margin-right: 0.7rem;
+          border: 1px solid whitesmoke;
+          background-color: whitesmoke;
+          font-size: 1.2rem;
+          color: gray;
+          min-width: 4rem;
+          line-height: 1.8rem;
+          text-align: center;
+          &.add {
+            cursor: pointer;
+            transition: all 0.4s;
+            &:hover {
+              background-color: black;
+              color: white;
+            }
+          }
+        }
+      }
+    }
+    .resume-other-skills {
+      margin-bottom: 3rem;
+      color: gray;
+
+      .block-title {
+        font-size: 1.4rem;
+        margin-bottom: 1rem;
+        letter-spacing: 0.2mm;
+      }
+      .other-skills {
+        display: flex;
+        flex-wrap: wrap;
+        > span {
+          padding: 0.1rem 1rem;
+          border-radius: 1rem;
+          margin-bottom: 0.7rem;
+          margin-right: 0.7rem;
+          border: 1px solid whitesmoke;
+          background-color: whitesmoke;
+          font-size: 1.2rem;
+          color: gray;
+          min-width: 4rem;
+          line-height: 1.8rem;
+          text-align: center;
+          &.add {
+            cursor: pointer;
+            transition: all 0.4s;
+            &:hover {
+              background-color: black;
+              color: white;
+            }
+          }
+        }
+      }
+    }
+
+    .resume-languages {
+      margin-bottom: 3rem;
+      color: gray;
+
+      .block-title {
+        font-size: 1.4rem;
+        margin-bottom: 1rem;
+        letter-spacing: 0.2mm;
+      }
+      .languages {
+        display: flex;
+        flex-wrap: wrap;
+        > span {
+          padding: 0.1rem 1rem;
+          border-radius: 1rem;
+          margin-bottom: 0.7rem;
+          margin-right: 0.7rem;
+          border: 1px solid whitesmoke;
+          background-color: whitesmoke;
+          font-size: 1.2rem;
+          color: gray;
+          min-width: 4rem;
+          line-height: 1.8rem;
+          text-align: center;
+          &.add {
+            cursor: pointer;
+            transition: all 0.4s;
+            &:hover {
+              background-color: black;
+              color: white;
+            }
+          }
+        }
+      }
+    }
+
+    .resume-socials {
+      margin-bottom: 3rem;
+      color: gray;
+
+      .block-title {
+        font-size: 1.4rem;
+        margin-bottom: 1rem;
+        letter-spacing: 0.2mm;
+      }
+      .socials-links {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        > span {
+          margin-bottom: 0.7rem;
+          font-size: 1.2rem;
+          color: gray;
+          line-height: 1.8rem;
+          &.add {
+            cursor: pointer;
+            transition: all 0.4s;
+            padding: 0.1rem 1rem;
+            border-radius: 1rem;
+            margin-bottom: 0.7rem;
+            margin-right: 0.7rem;
+            border: 1px solid whitesmoke;
+            background-color: whitesmoke;
+            font-size: 1.2rem;
+            color: gray;
+            min-width: 4rem;
+            line-height: 1.8rem;
+            text-align: center;
+            &:hover {
+              background-color: black;
+              color: white;
+            }
+          }
+        }
+      }
+    }
+
+    .resume-interests {
+      margin-bottom: 3rem;
+      color: gray;
+
+      .block-title {
+        font-size: 1.4rem;
+        margin-bottom: 1rem;
+        letter-spacing: 0.2mm;
+      }
+      .interests {
+        display: flex;
+        flex-wrap: wrap;
+        > span {
+          margin-right: 0.7rem;
+          margin-bottom: 0.7rem;
+          font-size: 1.2rem;
+          color: gray;
+          line-height: 1.8rem;
+          &.add {
+            cursor: pointer;
+            transition: all 0.4s;
+            padding: 0.1rem 1rem;
+            border-radius: 1rem;
+            margin-bottom: 0.7rem;
+            margin-right: 0.7rem;
+            border: 1px solid whitesmoke;
+            background-color: whitesmoke;
+            font-size: 1.2rem;
+            color: gray;
+            min-width: 4rem;
+            line-height: 1.8rem;
+            text-align: center;
+            &:hover {
+              background-color: black;
+              color: white;
+            }
+          }
+        }
+      }
+    }
+  }
+  .top-bar {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 1rem;
+    width: 100%;
+    background-color: #4c4c4c;
+  }
+}
