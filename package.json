@@ -1,7 +1,7 @@
 {
   "name": "resume-generator",
   "version": "0.1.0",
-  "private": false,
+  "private": true,
   "homepage": "https://ayech0x2.github.io/resume-generator/",
   "dependencies": {
     "@framejs/core": "^1.0.9",
@@ -26,7 +26,6 @@
     "react-dom": "^17.0.2",
     "react-hook-form": "^7.9.0",
     "react-redux": "^7.2.4",
-    "react-screen-orientation": "^0.0.4",
     "react-scripts": "4.0.3",
     "redux": "^4.1.0",
     "redux-logger": "^3.0.6",

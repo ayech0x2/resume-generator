@@ -90,7 +90,9 @@ const Resume: React.FunctionComponent<IResume> = (props: IResume) => {
 export default Resume;
 
 const ResumeInterests = () => {
-  const { isPreview } = useSelector((state: any) => state.mainReducer);
+  const { isPreview, isProcessing } = useSelector(
+    (state: any) => state.mainReducer
+  );
 
   const [elRefs, setElRefs] = React.useState<any[]>([]);
   const [interests, setInterests] = React.useState<any[]>(interestsOptions);
@@ -122,7 +124,7 @@ const ResumeInterests = () => {
             />
           </span>
         ))}
-        {!isPreview && (
+        {!isPreview && !isProcessing && (
           <span onClick={handleAddToolClick} className="add">
             +
           </span>
@@ -133,7 +135,9 @@ const ResumeInterests = () => {
 };
 
 const ResumeSocials = () => {
-  const { isPreview } = useSelector((state: any) => state.mainReducer);
+  const { isPreview, isProcessing } = useSelector(
+    (state: any) => state.mainReducer
+  );
   const [elRefs, setElRefs] = React.useState<any[]>([]);
   const [links, setLinks] = React.useState<any[]>(linksOptions);
   let arrLength = links.length;
@@ -164,7 +168,7 @@ const ResumeSocials = () => {
             />
           </span>
         ))}
-        {!isPreview && (
+        {!isPreview && !isProcessing && (
           <span onClick={handleAddToolClick} className="add">
             +
           </span>
@@ -175,7 +179,9 @@ const ResumeSocials = () => {
 };
 
 const ResumeLanguages = () => {
-  const { isPreview } = useSelector((state: any) => state.mainReducer);
+  const { isPreview, isProcessing } = useSelector(
+    (state: any) => state.mainReducer
+  );
   const [elRefs, setElRefs] = React.useState<any[]>([]);
   const [languages, setLanguages] = React.useState<any[]>(languagesOptions);
   let arrLength = languages.length;
@@ -206,7 +212,7 @@ const ResumeLanguages = () => {
             />
           </span>
         ))}
-        {!isPreview && (
+        {!isPreview && !isProcessing && (
           <span onClick={handleAddToolClick} className="add">
             +
           </span>
@@ -217,7 +223,9 @@ const ResumeLanguages = () => {
 };
 
 const ResumeOtherSkills = () => {
-  const { isPreview } = useSelector((state: any) => state.mainReducer);
+  const { isPreview, isProcessing } = useSelector(
+    (state: any) => state.mainReducer
+  );
   const [elRefs, setElRefs] = React.useState<any[]>([]);
   const [skills, setSkills] = React.useState<any[]>(skillsOptions);
   let arrLength = skills.length;
@@ -249,7 +257,7 @@ const ResumeOtherSkills = () => {
             />
           </span>
         ))}
-        {!isPreview && (
+        {!isPreview && !isProcessing && (
           <span onClick={handleAddToolClick} className="add">
             +
           </span>
@@ -260,7 +268,9 @@ const ResumeOtherSkills = () => {
 };
 
 const ResumeToolsAndTechnologies = () => {
-  const { isPreview } = useSelector((state: any) => state.mainReducer);
+  const { isPreview, isProcessing } = useSelector(
+    (state: any) => state.mainReducer
+  );
   const [elRefs, setElRefs] = React.useState<any[]>([]);
   const [tools, setTools] = React.useState<any[]>(toolsOptions);
   let arrLength = tools.length;
@@ -291,7 +301,7 @@ const ResumeToolsAndTechnologies = () => {
             />
           </span>
         ))}
-        {!isPreview && (
+        {!isPreview && !isProcessing && (
           <span onClick={handleAddToolClick} className="add">
             +
           </span>
@@ -325,7 +335,9 @@ const ResumePersonalInfo = React.memo(() => {
 });
 
 const ResumeEducation = React.memo(() => {
-  const { isPreview } = useSelector((state: any) => state.mainReducer);
+  const { isPreview, isProcessing } = useSelector(
+    (state: any) => state.mainReducer
+  );
 
   const [educations, setEducations] = React.useState<any[]>(educationOptions);
   const [educationTitle, setEducationTitle] =
@@ -370,7 +382,7 @@ const ResumeEducation = React.memo(() => {
           />
         ))}
       </div>
-      {!isPreview && (
+      {!isPreview && !isProcessing && (
         <span onClick={handleAddClick} className="add">
           + Add block
         </span>
@@ -411,17 +423,11 @@ const SingleEducation = ({ education, handleEducationChange, index }: any) => {
 };
 
 const ResumeExperience = React.memo(() => {
-  const title = React.useRef("experience");
   const [experiences, setExperiences] =
     React.useState<any[]>(experienceOptions);
 
   const [experienceTitle, setExperienceTitle] =
     React.useState<string>("Experience");
-
-  const handleChange = (evt: any, name: any) => {
-    //@ts-ignore
-    [name].current = evt.target.value;
-  };
 
   const handleAddClick = () => {
     setExperiences([
@@ -444,7 +450,9 @@ const ResumeExperience = React.memo(() => {
     _experiences[index][keyName] = value;
     setExperiences(_experiences);
   };
-  const { isPreview } = useSelector((state: any) => state.mainReducer);
+  const { isPreview, isProcessing } = useSelector(
+    (state: any) => state.mainReducer
+  );
 
   return (
     <div className={`resume-experience`}>
@@ -464,7 +472,7 @@ const ResumeExperience = React.memo(() => {
           />
         ))}
       </div>
-      {!isPreview && (
+      {!isPreview && !isProcessing && (
         <div onClick={handleAddClick} className="add">
           + Add block
         </div>

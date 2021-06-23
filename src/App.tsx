@@ -2,11 +2,11 @@ import React from "react";
 import { useSelector } from "react-redux";
 import Resume from "./components/Resume/Resume";
 import StylingPanel from "./components/StylingPanel/StylingPanel";
-//@ts-ignore
-import DeviceOrientation, { Orientation } from "react-screen-orientation";
 
 function App() {
-  const { font, topBarColor } = useSelector((state: any) => state.mainReducer);
+  const { font, topBarColor, isProcessing } = useSelector(
+    (state: any) => state.mainReducer
+  );
   const [isLoading, setIsLoading] = React.useState<boolean>(true);
 
   function hexToRGB(hex: any, alpha: any) {
@@ -25,27 +25,32 @@ function App() {
     document.body.style.backgroundColor = hexToRGB(topBarColor, 0.1);
   }, [topBarColor]);
 
-
   return (
     <div className={`App ${font}`}>
-      <DeviceOrientation lockOrientation={"landscape"}>
-        <Orientation orientation="landscape" alwaysRender={false}>
-          {isLoading ? (
-            <div className="loading roboto">
-              <h1>Free resume generator</h1>
-              <div onClick={() => setIsLoading(false)}>Check it out!</div>
-              <p>
-                <strong>hamza@halber.io</strong>
-              </p>
-            </div>
-          ) : (
-            <>
-              <Resume  />
-              <StylingPanel  />
-            </>
-          )}
-        </Orientation>
-      </DeviceOrientation>
+      {isProcessing && (
+        <div
+          className="processing"
+          style={{
+            backgroundColor: hexToRGB(topBarColor, 0.1),
+          }}
+        >
+          <h1>Processing...</h1>
+        </div>
+      )}
+      {isLoading ? (
+        <div className="loading roboto">
+          <h1>Free resume generator</h1>
+          <div onClick={() => setIsLoading(false)}>Check it out!</div>
+          <p>
+            <strong>hamza@halber.io</strong>
+          </p>
+        </div>
+      ) : (
+        <>
+          <Resume />
+          <StylingPanel />
+        </>
+      )}
     </div>
   );
 }

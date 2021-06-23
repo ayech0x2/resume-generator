@@ -123,6 +123,50 @@ const StylingForm = () => {
     });
   };
 
+  const saveAsPdf = async () => {
+    await dispatch({
+      type: "DISABLE_PREVIEW",
+    });
+    dispatch({
+      type: "START_PROCESSING",
+    });
+    window.scrollTo(0, 0);
+    //@ts-ignore
+    html2canvas(document.querySelector("#resume"), {
+      useCORS: true,
+      etterRendering: 1,
+      allowTaint: true,
+      scale: 2,
+    })
+      .then((canvas: any) => {
+        var imgData = canvas.toDataURL("image/png");
+        var imgWidth = 210;
+        var pageHeight = 295;
+        var imgHeight = (canvas.height * imgWidth) / canvas.width;
+        var heightLeft = imgHeight;
+        var doc = new jspdf("p", "mm");
+        var position = 0;
+
+        doc.addImage(imgData, "PNG", 0, position, imgWidth, imgHeight);
+        heightLeft -= pageHeight;
+
+        while (heightLeft >= 0) {
+          position = heightLeft - imgHeight;
+          doc.addPage();
+          doc.addImage(imgData, "PNG", 0, position, imgWidth, imgHeight);
+          heightLeft -= pageHeight;
+        }
+        doc.save("CV.pdf");
+        dispatch({
+          type: "END_PROCESSING",
+        });
+      })
+      .catch(() =>
+        dispatch({
+          type: "END_PROCESSING",
+        })
+      );
+  };
   return (
     <form className="styling-form">
       <div className="form-group">
@@ -197,39 +241,7 @@ const StylingForm = () => {
       />
 
       <input
-        onClick={() => {
-          window.scrollTo(0, 0);
-          //@ts-ignore
-          html2canvas(document.querySelector("#resume"), {
-            useCORS: true,
-            etterRendering: 1,
-            allowTaint: true,
-          }).then((canvas: any) => {
-            var imgData = canvas.toDataURL("image/png");
-            // var doc: any = new jspdf("p", "mm", "a4");
-            // var width = doc.internal.pageSize.getWidth();
-            // var height = doc.internal.pageSize.getHeight();
-            // doc.addImage(imgData, "JPEG", 0, 0, width, height);
-            // doc.save("sample-file.pdf");
-            var imgWidth = 210;
-            var pageHeight = 295;
-            var imgHeight = (canvas.height * imgWidth) / canvas.width;
-            var heightLeft = imgHeight;
-            var doc = new jspdf("p", "mm");
-            var position = 0;
-
-            doc.addImage(imgData, "PNG", 0, position, imgWidth, imgHeight);
-            heightLeft -= pageHeight;
-
-            while (heightLeft >= 0) {
-              position = heightLeft - imgHeight;
-              doc.addPage();
-              doc.addImage(imgData, "PNG", 0, position, imgWidth, imgHeight);
-              heightLeft -= pageHeight;
-            }
-            doc.save("CV" + ".pdf");
-          });
-        }}
+        onClick={saveAsPdf}
         className="form-action"
         type="button"
         value={"Save as PDF"}
