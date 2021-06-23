@@ -60,7 +60,7 @@
           border: 1px solid whitesmoke;
           height: 100px;
           width: 100px;
-          border-radius:50px;
+          border-radius: 50px;
           object-fit: cover;
         }
       }
@@ -83,10 +83,30 @@
       }
       .experience {
         .single-experience {
+          position: relative;
+          .remove {
+            transition: all 0.3s;
+            opacity: 0;
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            background: transparent;
+            border: 1px solid whitesmoke;
+            border-radius: 10px;
+          }
+          &:hover {
+            .remove {
+              opacity: 1;
+            }
+          }
+
           margin-bottom: 4rem;
           .experience-title {
             font-size: 1.4rem;
             margin-bottom: 1rem;
+            max-width: 80%;
           }
           .experience-company {
             font-size: 1.2rem;
@@ -131,9 +151,27 @@
         margin-bottom: 2rem;
       }
       .single-education {
+        position: relative;
         margin-bottom: 4rem;
-
+        .remove {
+          transition: all 0.3s;
+          opacity: 0;
+          position: absolute;
+          top: 5px;
+          right: 5px;
+          cursor: pointer;
+          font-size: 1rem;
+          background: transparent;
+          border: 1px solid whitesmoke;
+          border-radius: 10px;
+        }
+        &:hover {
+          .remove {
+            opacity: 1;
+          }
+        }
         .education-speciality {
+          max-width: 80%;
           font-size: 1.4rem;
           margin-bottom: 1rem;
         }

@@ -364,6 +364,11 @@ const ResumeEducation = React.memo(() => {
     setEducations(_educations);
   };
 
+  const handleEducationRemove = (index: number) => {
+    let _educations = Array.from(educations);
+    _educations.splice(index, 1);
+    setEducations(_educations);
+  };
   return (
     <div className={`resume-education`}>
       <h1 className="block-title medium">
@@ -379,6 +384,7 @@ const ResumeEducation = React.memo(() => {
             index={key}
             education={_education}
             handleEducationChange={handleEducationChange}
+            handleEducationRemove={handleEducationRemove}
           />
         ))}
       </div>
@@ -391,9 +397,20 @@ const ResumeEducation = React.memo(() => {
   );
 });
 
-const SingleEducation = ({ education, handleEducationChange, index }: any) => {
+const SingleEducation = ({
+  education,
+  handleEducationChange,
+  index,
+  handleEducationRemove,
+}: any) => {
   return (
     <div className={`single-education`}>
+      <input
+        className="remove"
+        type="button"
+        value="remove"
+        onClick={() => handleEducationRemove(index)}
+      />
       <h1 className="education-speciality regular">
         <ContentEditable
           html={education.title}
@@ -454,6 +471,12 @@ const ResumeExperience = React.memo(() => {
     (state: any) => state.mainReducer
   );
 
+  const handleExperienceRemove = (index: number) => {
+    let _experiences = Array.from(experiences);
+    _experiences.splice(index, 1);
+    setExperiences(_experiences);
+  };
+
   return (
     <div className={`resume-experience`}>
       <h1 className="block-title medium">
@@ -469,6 +492,7 @@ const ResumeExperience = React.memo(() => {
             index={key}
             experience={_experience}
             handleExperienceChange={handleExperienceChange}
+            handleExperienceRemove={handleExperienceRemove}
           />
         ))}
       </div>
@@ -484,10 +508,17 @@ const ResumeExperience = React.memo(() => {
 const SingleExperience = ({
   experience,
   handleExperienceChange,
+  handleExperienceRemove,
   index,
 }: any) => {
   return (
     <div className={`single-experience`}>
+      <input
+        className="remove"
+        type="button"
+        value="remove"
+        onClick={() => handleExperienceRemove(index)}
+      />
       <h1 className="experience-title regular">
         <ContentEditable
           html={experience.title}

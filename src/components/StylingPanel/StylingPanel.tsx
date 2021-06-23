@@ -136,7 +136,7 @@ const StylingForm = () => {
       useCORS: true,
       etterRendering: 1,
       allowTaint: true,
-      scale: 2,
+      scale: 3,
     })
       .then((canvas: any) => {
         var imgData = canvas.toDataURL("image/png");
