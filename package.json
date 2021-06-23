@@ -1,8 +1,8 @@
 {
   "name": "resume-generator",
   "version": "0.1.0",
-  "private": true,
-  "homepage": "https://github.com/ayech0x2/resume-generator",
+  "private": false,
+  "homepage": "https://github.com/ayech0x2/resume-generator/",
   "dependencies": {
     "@framejs/core": "^1.0.9",
     "@testing-library/jest-dom": "^5.11.4",
