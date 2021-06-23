@@ -553,11 +553,10 @@ const SingleExperience = ({
   );
 };
 
-const ResumeHeader = () => {
+const ResumeHeader = React.memo(() => {
   const userName = React.useRef("Ayech Hamza");
   const title = React.useRef("Co-Founder & CTO at Halber");
 
-  const [avatar, setAvatar] = React.useState<string>("");
   const [avatarFile, setAvatarFile] = React.useState<null | string>(null);
 
   const handleChange = (evt: any, name: any) => {
@@ -612,4 +611,4 @@ const ResumeHeader = () => {
       </div>
     </div>
   );
-};
+});
