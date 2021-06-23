@@ -1,28 +1,28 @@
 {
   "files": {
-    "main.css": "/resume-generator/static/css/main.3f703940.chunk.css",
-    "main.js": "/resume-generator/static/js/main.2e551c91.chunk.js",
-    "main.js.map": "/resume-generator/static/js/main.2e551c91.chunk.js.map",
-    "runtime-main.js": "/resume-generator/static/js/runtime-main.bc152c39.js",
-    "runtime-main.js.map": "/resume-generator/static/js/runtime-main.bc152c39.js.map",
-    "static/js/2.8e0918ec.chunk.js": "/resume-generator/static/js/2.8e0918ec.chunk.js",
-    "static/js/2.8e0918ec.chunk.js.map": "/resume-generator/static/js/2.8e0918ec.chunk.js.map",
-    "static/js/3.26ba40d3.chunk.js": "/resume-generator/static/js/3.26ba40d3.chunk.js",
-    "static/js/3.26ba40d3.chunk.js.map": "/resume-generator/static/js/3.26ba40d3.chunk.js.map",
+    "main.css": "/resume-generator/static/css/main.4a83e8d7.chunk.css",
+    "main.js": "/resume-generator/static/js/main.78f934d8.chunk.js",
+    "main.js.map": "/resume-generator/static/js/main.78f934d8.chunk.js.map",
+    "runtime-main.js": "/resume-generator/static/js/runtime-main.ae4d1ccf.js",
+    "runtime-main.js.map": "/resume-generator/static/js/runtime-main.ae4d1ccf.js.map",
+    "static/js/2.55caba67.chunk.js": "/resume-generator/static/js/2.55caba67.chunk.js",
+    "static/js/2.55caba67.chunk.js.map": "/resume-generator/static/js/2.55caba67.chunk.js.map",
+    "static/js/3.b0ba05b9.chunk.js": "/resume-generator/static/js/3.b0ba05b9.chunk.js",
+    "static/js/3.b0ba05b9.chunk.js.map": "/resume-generator/static/js/3.b0ba05b9.chunk.js.map",
     "static/js/4.1f041739.chunk.js": "/resume-generator/static/js/4.1f041739.chunk.js",
     "static/js/4.1f041739.chunk.js.map": "/resume-generator/static/js/4.1f041739.chunk.js.map",
     "static/js/5.b29fc95b.chunk.js": "/resume-generator/static/js/5.b29fc95b.chunk.js",
     "static/js/5.b29fc95b.chunk.js.map": "/resume-generator/static/js/5.b29fc95b.chunk.js.map",
     "index.html": "/resume-generator/index.html",
-    "static/css/main.3f703940.chunk.css.map": "/resume-generator/static/css/main.3f703940.chunk.css.map",
-    "static/js/2.8e0918ec.chunk.js.LICENSE.txt": "/resume-generator/static/js/2.8e0918ec.chunk.js.LICENSE.txt",
-    "static/js/3.26ba40d3.chunk.js.LICENSE.txt": "/resume-generator/static/js/3.26ba40d3.chunk.js.LICENSE.txt",
+    "static/css/main.4a83e8d7.chunk.css.map": "/resume-generator/static/css/main.4a83e8d7.chunk.css.map",
+    "static/js/2.55caba67.chunk.js.LICENSE.txt": "/resume-generator/static/js/2.55caba67.chunk.js.LICENSE.txt",
+    "static/js/3.b0ba05b9.chunk.js.LICENSE.txt": "/resume-generator/static/js/3.b0ba05b9.chunk.js.LICENSE.txt",
     "static/js/4.1f041739.chunk.js.LICENSE.txt": "/resume-generator/static/js/4.1f041739.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.bc152c39.js",
-    "static/js/3.26ba40d3.chunk.js",
-    "static/css/main.3f703940.chunk.css",
-    "static/js/main.2e551c91.chunk.js"
+    "static/js/runtime-main.ae4d1ccf.js",
+    "static/js/3.b0ba05b9.chunk.js",
+    "static/css/main.4a83e8d7.chunk.css",
+    "static/js/main.78f934d8.chunk.js"
   ]
 }
